@@ -5,7 +5,6 @@ import { FoodArr, Food } from "./Recipes.interface";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Authorization from "@/components/Layout/Authorization";
-import Image from "next/image";
 
 export async function getServerSideProps() {
   const apiUrl: string = process.env.NEXT_PUBLIC_API_URL ?? "";
@@ -42,14 +41,11 @@ const Recipes = ({ data }: FoodArr) => {
                   key={item.id}
                   onClick={() => router.push(`/recipes/${item.id}`)}
                   className="group bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
-                  <Image
+                  <img
                     src={item.imageUrl}
                     alt={item.name}
-                    width={500}
-                    height={192}
                     className="w-full h-48 object-cover group-hover:opacity-80 transition-opacity duration-300"
                   />
-
                   <div className="p-6">
                     <h3 className="text-2xl font-semibold text-gray-800 group-hover:text-orange-600 transition-colors duration-300">
                       {item.name}

@@ -10,6 +10,7 @@ import Image from "next/image";
 export async function getServerSideProps() {
   const apiUrl: string = process.env.NEXT_PUBLIC_API_URL ?? "";
   const res = await axios.get(`${apiUrl}/foods`, {
+    console.log(res)
     headers: {
       "Content-Type": "application/json",
       apiKey: process.env.NEXT_PUBLIC_API_KEY ?? "",

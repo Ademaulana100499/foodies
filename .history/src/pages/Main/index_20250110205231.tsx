@@ -116,7 +116,7 @@ const MainPage = () => {
           </div>
           <div className="bg-gray-200 p-6 rounded-lg transform hover:scale-105 transition-transform duration-300 shadow-lg sm:w-64">
             <Image
-              src="/assets/dessert.jpg"
+              src="/public/assets/dessert.jpg"
               alt="Dessert"
               width={500}
               height={200}

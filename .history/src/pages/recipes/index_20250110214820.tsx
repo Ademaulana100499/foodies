@@ -17,7 +17,7 @@ export async function getServerSideProps() {
   });
   return { props: { data: res.data.data || [] } };
 }
-
+console.log(res);
 const Recipes = ({ data }: FoodArr) => {
   const router = useRouter();
 

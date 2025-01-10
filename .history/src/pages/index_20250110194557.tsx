@@ -2,15 +2,18 @@ import Head from "next/head";
 import Navbar from "@/components/Navbar";
 import MainPage from "./Main";
 import Footer from "@/components/Footer";
+import { getCookie } from "cookies-next"; // Sesuaikan path jika perlu
 
-export async function getServerSideProps(context: any) {
-  const token = context.req.cookies.token;
+export async function getServerSideProps() {
+  const token = getCookie("token");
+
   return {
     props: {
       token: token || null,
     },
   };
 }
+
 export default function Home({ token }: any) {
   console.log(token);
   return (

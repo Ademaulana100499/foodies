@@ -45,8 +45,8 @@ const Recipes = ({ data }: FoodArr) => {
                   <Image
                     src={item.imageUrl}
                     alt={item.name}
-                    width={500}
-                    height={192}
+                    width={500} // Sesuaikan dengan kebutuhan
+                    height={192} // 48 x 4 = 192
                     className="w-full h-48 object-cover group-hover:opacity-80 transition-opacity duration-300"
                   />
 

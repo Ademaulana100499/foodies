@@ -42,14 +42,11 @@ const RecipesDetail = ({ food }: FoodDetail) => {
               Back to Recipes List
             </button>
             <div className="bg-white rounded-lg shadow-xl overflow-hidden">
-              <Image
+              <img
                 src={food.imageUrl}
                 alt={food.name}
-                width={800}
-                height={384}
                 className="w-full h-96 object-cover rounded-t-lg"
               />
-
               <div className="p-6">
                 <h1 className="text-3xl font-extrabold text-gray-800 mb-4">
                   {food.name}

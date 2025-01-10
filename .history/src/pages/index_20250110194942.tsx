@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 
 export async function getServerSideProps(context: any) {
   const token = context.req.cookies.token;
+
   return {
     props: {
       token: token || null,

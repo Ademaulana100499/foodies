@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
 import { getCookie } from "cookies-next";
 import Link from "next/link";
-const Navbar = (props: any) => {
+const Navbar = () => {
   const router = useRouter();
-  const { token } = props;
+  const token = getCookie("token");
   const handleLogin = () => {
     router.push("/login");
   };
@@ -39,19 +39,19 @@ const Navbar = (props: any) => {
           </Link>
         </div>
         <div className="hidden md:block">
-          {token ? (
+          {/* {token ? (
             <button
-              onClick={() => handleLogout()}
+              onClick={handleLogout}
               className="bg-white text-orange-500 font-semibold py-2 px-4 rounded-lg hover:bg-orange-100 transition duration-300">
               Logout
             </button>
           ) : (
             <button
-              onClick={() => handleLogin()}
+              onClick={handleLogin}
               className="bg-white text-orange-500 font-semibold py-2 px-4 rounded-lg hover:bg-orange-100 transition duration-300">
               Login
             </button>
-          )}
+          )} */}
         </div>
         <div className="md:hidden">
           <button className="text-white focus:outline-none">

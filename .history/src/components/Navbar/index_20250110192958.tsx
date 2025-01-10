@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
 import { getCookie } from "cookies-next";
 import Link from "next/link";
-const Navbar = (props: any) => {
+const Navbar = () => {
   const router = useRouter();
-  const { token } = props;
+  const token = getCookie("token");
   const handleLogin = () => {
     router.push("/login");
   };

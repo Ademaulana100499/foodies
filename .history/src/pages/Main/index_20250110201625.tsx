@@ -53,8 +53,7 @@ const MainPage = () => {
               <Image
                 src="/assets/community-icon.png"
                 alt="Community Icon"
-                width={64}
-                height={64}
+                className="w-16 h-16"
               />
             </div>
             <h3 className="text-2xl font-semibold text-gray-800">
@@ -70,8 +69,7 @@ const MainPage = () => {
               <Image
                 src="/assets/chef-hat-icon.png"
                 alt="Chef Hat Icon"
-                width={64}
-                height={64}
+                className="w-16 h-16"
               />
             </div>
             <h3 className="text-2xl font-semibold text-gray-800">
@@ -101,10 +99,8 @@ const MainPage = () => {
         <div className="mt-12 flex flex-wrap justify-center gap-8">
           <div className="bg-gray-200 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 sm:w-64">
             <Image
-              src="/assets/salad.jpg"
+              src="https://nutritionrefined.com/wp-content/uploads/2023/08/homemade-garden-salad-featured.jpg"
               alt="Salad"
-              width={500}
-              height={200}
               className="w-full h-32 object-cover rounded-lg mb-4"
             />
             <h3 className="text-xl font-semibold text-gray-800">
@@ -116,10 +112,8 @@ const MainPage = () => {
           </div>
           <div className="bg-gray-200 p-6 rounded-lg transform hover:scale-105 transition-transform duration-300 shadow-lg sm:w-64">
             <Image
-              src="/assets/dessert.jpg"
+              src="https://dcikabakery.com/wp-content/uploads/2023/03/Dessert-Box-Red-Velvet.jpg"
               alt="Dessert"
-              width={500}
-              height={200}
               className="w-full h-32 object-cover rounded-lg mb-4"
             />
             <h3 className="text-xl font-semibold text-gray-800">
@@ -131,10 +125,8 @@ const MainPage = () => {
           </div>
           <div className="bg-gray-200 p-6 rounded-lg  transform hover:scale-105 transition-transform duration-300 shadow-lg  sm:w-64">
             <Image
-              src="/assets/pasta.webp"
+              src="https://www.sasa.co.id/medias/page_medias/resep_pasta.jpg"
               alt="Pasta"
-              width={500}
-              height={200}
               className="w-full h-32 object-cover rounded-lg mb-4"
             />
             <h3 className="text-xl font-semibold text-gray-800">

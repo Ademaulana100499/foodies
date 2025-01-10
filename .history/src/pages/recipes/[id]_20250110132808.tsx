@@ -6,7 +6,6 @@ import { GetServerSidePropsContext } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Authorization from "@/components/Layout/Authorization";
-import Image from "next/image";
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const apiUrl: string = process.env.NEXT_PUBLIC_API_URL ?? "";
@@ -42,14 +41,11 @@ const RecipesDetail = ({ food }: FoodDetail) => {
               Back to Recipes List
             </button>
             <div className="bg-white rounded-lg shadow-xl overflow-hidden">
-              <Image
+              <img
                 src={food.imageUrl}
                 alt={food.name}
-                width={800}
-                height={384}
                 className="w-full h-96 object-cover rounded-t-lg"
               />
-
               <div className="p-6">
                 <h1 className="text-3xl font-extrabold text-gray-800 mb-4">
                   {food.name}
@@ -71,8 +67,8 @@ const RecipesDetail = ({ food }: FoodDetail) => {
                     Ingredients
                   </h3>
                   <ul className="list-disc list-inside text-gray-700">
-                    {food.ingredients.map((ingredient, index) => (
-                      <li key={index}>{ingredient}</li>
+                    {food.ingredients.map((ingredient) => (
+                      <li>{ingredient}</li>
                     ))}
                   </ul>
                 </div>

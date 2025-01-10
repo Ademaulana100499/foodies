@@ -14,6 +14,7 @@ export async function getServerSideProps() {
       "Content-Type": "application/json",
       apiKey: process.env.NEXT_PUBLIC_API_KEY ?? "",
     },
+    console.log(res);
   });
   return { props: { data: res.data.data || [] } };
 }

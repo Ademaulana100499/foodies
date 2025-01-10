@@ -45,8 +45,8 @@ const RecipesDetail = ({ food }: FoodDetail) => {
               <Image
                 src={food.imageUrl}
                 alt={food.name}
-                width={800}
-                height={384}
+                width={800} // Sesuaikan ukuran dengan kebutuhan
+                height={384} // Sesuaikan ukuran dengan kebutuhan (96 x 4 = 384)
                 className="w-full h-96 object-cover rounded-t-lg"
               />
 

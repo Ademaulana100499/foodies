@@ -1,14 +1,15 @@
 import { useRouter } from "next/router";
 import { getCookie } from "cookies-next";
 import Link from "next/link";
-const Navbar = (props: any) => {
+const Navbar = () => {
   const router = useRouter();
-  const { token } = props;
+  const token = getCookie("token");
+  console.log(token);
   const handleLogin = () => {
     router.push("/login");
   };
   const handleLogout = () => {
-    document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    // document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
     router.push("/login");
   };
 
