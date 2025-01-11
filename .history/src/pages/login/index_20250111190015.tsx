@@ -1,4 +1,4 @@
-import useLogin from "../../hooks/useLogin";
+import useLogin from "./useLogin";
 import { useRouter } from "next/router";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 const LoginPage = () => {
@@ -31,7 +31,7 @@ const LoginPage = () => {
         <input
           type="password"
           onChange={(e) =>
-            setFormData({ ...formData, password: e.target.value })
+            setformData({ ...formData, password: e.target.value })
           }
           placeholder="Password"
           className="w-full p-3 mb-6 border border-orange-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"

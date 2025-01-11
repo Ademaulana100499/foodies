@@ -1,4 +1,4 @@
-import useLogin from "../../hooks/useLogin";
+import useLogin from "./useLogin";
 import { useRouter } from "next/router";
 import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 const LoginPage = () => {

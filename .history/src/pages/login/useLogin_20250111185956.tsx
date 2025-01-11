@@ -5,17 +5,22 @@ import { useState } from "react";
 
 const useLogin = () => {
   const router = useRouter();
-  const [formData, setformData] = useState({
+  const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
   const handleFormLogin = async () => {
-    const response = await handleLogin(formData);
-    setCookie("token", response.data.token);
-    router.push("/");
+    try {
+      const response = await handleLogin(formData);
+      setCookie("token", response.data.token);
+      router.push("/");
+    } catch (error) {
+      console.error("Login failed:", error);
+    }
   };
-  return { handleFormLogin, setformData, formData };
+
+  return { handleFormLogin, setFormData, formData };
 };
 
 export default useLogin;
