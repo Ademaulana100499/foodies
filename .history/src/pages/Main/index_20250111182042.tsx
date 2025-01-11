@@ -89,7 +89,7 @@ const MainPage = () => {
         </h2>
         <p className="mt-4 text-lg text-center text-gray-600">
           Discover a world of delicious meals waiting for you to try. From
-          appetizers to desserts, there is something for every taste.
+          appetizers to desserts, there's something for every taste.
         </p>
         <div className="mt-8 text-center">
           <Link
@@ -151,7 +151,7 @@ const MainPage = () => {
         className="bg-gray-100 py-16 px-8 md:px-16 text-center">
         <h2 className="text-3xl font-bold text-orange-600">Contact Us</h2>
         <p className="mt-4 text-gray-700">
-          We&apos;d love to hear from you! Reach out with any questions or
+          We'd love to hear from you! Reach out with any questions or
           suggestions.
         </p>
         <form className="mt-8 max-w-md mx-auto">

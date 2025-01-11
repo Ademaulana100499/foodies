@@ -7,15 +7,11 @@ const Authorization = ({ children }: AuthProps) => {
   const router = useRouter();
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const token = getCookie("token");
-      if (!token && router.pathname !== "/login") {
-        router.push("/login");
-      }
-    }
-  }, [router]);
+    const token = getCookie("token");
+    if (!token) router.push("/login");
+  }, []);
 
-  return <>{children}</>;
+  return children;
 };
 
 export default Authorization;
