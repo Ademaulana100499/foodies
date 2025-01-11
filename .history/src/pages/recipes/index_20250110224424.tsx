@@ -24,7 +24,7 @@ const Recipes = ({ data }: FoodArr) => {
   return (
     <Authorization>
       <div className="bg-gray-50 min-h-screen">
-        <Navbar />
+        <Navbar token={token} />
 
         <div className="max-w-6xl mt-16 mx-auto px-4 py-8">
           <h1 className="text-3xl font-extrabold text-center text-orange-600 mb-6">

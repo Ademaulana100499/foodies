@@ -1,22 +1,11 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-
-const Navbar = () => {
+const Navbar = (props: any) => {
   const router = useRouter();
-  const [token, setToken] = useState<string | null>(null);
-
-  useEffect(() => {
-    const cookies = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("token="));
-    setToken(cookies ? cookies.split("=")[1] : null);
-  }, []);
-
+  const { token } = props;
   const handleLogin = () => {
     router.push("/login");
   };
-
   const handleLogout = () => {
     document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
     router.push("/login");
@@ -51,13 +40,13 @@ const Navbar = () => {
         <div className="hidden md:block">
           {token ? (
             <button
-              onClick={handleLogout}
+              onClick={() => handleLogout()}
               className="bg-white text-orange-500 font-semibold py-2 px-4 rounded-lg hover:bg-orange-100 transition duration-300">
               Logout
             </button>
           ) : (
             <button
-              onClick={handleLogin}
+              onClick={() => handleLogin()}
               className="bg-white text-orange-500 font-semibold py-2 px-4 rounded-lg hover:bg-orange-100 transition duration-300">
               Login
             </button>
