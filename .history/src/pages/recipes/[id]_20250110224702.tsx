@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
-import { FoodDetail } from "../../types/Recipes.interface";
+import { FoodDetail } from "./Recipes.interface";
 import { GetServerSidePropsContext } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
