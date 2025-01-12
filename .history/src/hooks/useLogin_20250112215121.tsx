@@ -3,6 +3,7 @@ import { handleLogin } from "@/services/auth";
 import { setCookie } from "cookies-next";
 import { useRouter } from "next/router";
 import Swal from "sweetalert2";
+import { AxiosError } from "axios";
 const useLogin = () => {
   const [isClient, setIsClient] = useState(false);
   const router = useRouter();
@@ -27,6 +28,7 @@ const useLogin = () => {
       });
       router.push("/");
     } catch (error: unknown) {
+      console.error(error.response.data.message);
       Swal.fire({
         title: "Email or Password is incorrect!",
         icon: "error",

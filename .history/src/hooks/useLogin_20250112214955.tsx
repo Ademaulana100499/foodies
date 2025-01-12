@@ -26,7 +26,7 @@ const useLogin = () => {
         confirmButtonColor: "#F97316",
       });
       router.push("/");
-    } catch (error: unknown) {
+    } catch (error) {
       Swal.fire({
         title: "Email or Password is incorrect!",
         icon: "error",

@@ -27,6 +27,7 @@ const useLogin = () => {
       });
       router.push("/");
     } catch (error: unknown) {
+      console.error(error.response.data.message);
       Swal.fire({
         title: "Email or Password is incorrect!",
         icon: "error",
