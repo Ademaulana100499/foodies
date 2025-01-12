@@ -31,7 +31,7 @@ const Recipes = ({ data }: FoodArr) => {
       <div className="bg-gray-50 min-h-screen">
         <Navbar />
 
-        <div className="max-w-6xl mt-12 mx-auto px-4 py-8">
+        <div className="max-w-6xl mt-14 mx-auto px-4 py-8">
           <h1 className="text-3xl font-extrabold text-center text-orange-600 mb-6">
             Explore Our Delicious Recipes
           </h1>
