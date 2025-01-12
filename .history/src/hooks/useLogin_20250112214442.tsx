@@ -27,7 +27,8 @@ const useLogin = () => {
         confirmButtonColor: "#F97316",
       });
       router.push("/");
-    } catch (error) {
+    } catch (error: AxiosError) {
+      console.error(error.response.data.message);
       Swal.fire({
         title: "Email or Password is incorrect!",
         icon: "error",
