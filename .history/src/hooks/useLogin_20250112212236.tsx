@@ -23,7 +23,6 @@ const useLogin = () => {
         title: "Login Success!",
         icon: "success",
         draggable: true,
-        confirmButtonColor: "#F97316",
       });
       router.push("/");
     } catch (error: any) {
@@ -32,7 +31,6 @@ const useLogin = () => {
         title: "Email or Password is incorrect!",
         icon: "error",
         draggable: true,
-        confirmButtonColor: "#F97316",
       });
     }
   };

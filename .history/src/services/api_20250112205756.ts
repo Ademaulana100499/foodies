@@ -14,6 +14,7 @@ export const fetchAPI = async (
     })
       .then((response) => resolve(response))
       .catch((error) => {
+        console.error("API fetch error:", error);
         reject(error);
       });
   });

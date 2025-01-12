@@ -19,20 +19,13 @@ const useLogin = () => {
     try {
       const response = await handleLogin(formData);
       setCookie("token", response.data.token);
-      Swal.fire({
-        title: "Login Success!",
-        icon: "success",
-        draggable: true,
-        confirmButtonColor: "#F97316",
-      });
       router.push("/");
-    } catch (error: any) {
-      console.error(error.response.data.message);
+    } catch (error) {
+      console.error("Login failed:", error);
       Swal.fire({
         title: "Email or Password is incorrect!",
         icon: "error",
         draggable: true,
-        confirmButtonColor: "#F97316",
       });
     }
   };

@@ -3,7 +3,7 @@ import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 export const fetchAPI = async (
   options: AxiosRequestConfig
 ): Promise<AxiosResponse> => {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     axios({
       baseURL: process.env.NEXT_PUBLIC_API_URL,
       headers: {
@@ -12,9 +12,12 @@ export const fetchAPI = async (
       },
       ...options,
     })
-      .then((response) => resolve(response))
-      .catch((error) => {
-        reject(error);
+      .then((res) => resolve(res))
+      .catch((err) => {
+        console.log(err);
+        alert(
+          "The email or password you entered is incorrect. Please try again."
+        );
       });
   });
 };

@@ -32,7 +32,6 @@ const useLogin = () => {
         title: "Email or Password is incorrect!",
         icon: "error",
         draggable: true,
-        confirmButtonColor: "#F97316",
       });
     }
   };

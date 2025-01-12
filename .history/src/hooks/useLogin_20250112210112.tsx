@@ -19,20 +19,30 @@ const useLogin = () => {
     try {
       const response = await handleLogin(formData);
       setCookie("token", response.data.token);
-      Swal.fire({
-        title: "Login Success!",
-        icon: "success",
-        draggable: true,
-        confirmButtonColor: "#F97316",
-      });
       router.push("/");
-    } catch (error: any) {
-      console.error(error.response.data.message);
+    } catch (error) {
+      console.error("Login failed:", error);
+      let timerInterval;
       Swal.fire({
-        title: "Email or Password is incorrect!",
-        icon: "error",
-        draggable: true,
-        confirmButtonColor: "#F97316",
+        title: "Auto close alert!",
+        html: "I will close in <b></b> milliseconds.",
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading();
+          const timer = Swal.getPopup().querySelector("b");
+          timerInterval = setInterval(() => {
+            timer.textContent = `${Swal.getTimerLeft()}`;
+          }, 100);
+        },
+        willClose: () => {
+          clearInterval(timerInterval);
+        },
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          console.log("I was closed by the timer");
+        }
       });
     }
   };

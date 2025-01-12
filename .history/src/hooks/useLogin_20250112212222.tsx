@@ -20,10 +20,9 @@ const useLogin = () => {
       const response = await handleLogin(formData);
       setCookie("token", response.data.token);
       Swal.fire({
-        title: "Login Success!",
+        title: "Drag me!",
         icon: "success",
         draggable: true,
-        confirmButtonColor: "#F97316",
       });
       router.push("/");
     } catch (error: any) {
@@ -32,7 +31,6 @@ const useLogin = () => {
         title: "Email or Password is incorrect!",
         icon: "error",
         draggable: true,
-        confirmButtonColor: "#F97316",
       });
     }
   };
