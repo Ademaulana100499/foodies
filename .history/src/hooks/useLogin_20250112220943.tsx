@@ -3,7 +3,6 @@ import { handleLogin } from "@/services/auth";
 import { setCookie } from "cookies-next";
 import { useRouter } from "next/router";
 import Swal from "sweetalert2";
-import { AxiosError } from "axios";
 const useLogin = () => {
   const [isClient, setIsClient] = useState(false);
   const router = useRouter();
@@ -28,8 +27,10 @@ const useLogin = () => {
       });
       router.push("/");
     } catch (error: unknown) {
+      // Gunakan tipe error `unknown`
       if (error instanceof AxiosError) {
-        console.error(error.response?.data?.message);
+        // Periksa apakah error adalah instance dari AxiosError
+        console.error(error.response?.data?.message); // Akses message dari response error
         Swal.fire({
           title: "Email or Password is incorrect!",
           icon: "error",
@@ -37,6 +38,7 @@ const useLogin = () => {
           confirmButtonColor: "#F97316",
         });
       } else {
+        // Jika error bukan dari Axios, log error secara umum
         console.error("An unexpected error occurred:", error);
       }
     }

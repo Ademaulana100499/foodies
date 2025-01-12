@@ -27,9 +27,9 @@ const useLogin = () => {
         confirmButtonColor: "#F97316",
       });
       router.push("/");
-    } catch (error: unknown) {
-      if (error instanceof AxiosError) {
-        console.error(error.response?.data?.message);
+    } catch (error: unknown) {  // Gunakan tipe error `unknown`
+      if (error instanceof AxiosError) {  // Periksa apakah error adalah instance dari AxiosError
+        console.error(error.response?.data?.message);  // Akses message dari response error
         Swal.fire({
           title: "Email or Password is incorrect!",
           icon: "error",
@@ -37,9 +37,9 @@ const useLogin = () => {
           confirmButtonColor: "#F97316",
         });
       } else {
+        // Jika error bukan dari Axios, log error secara umum
         console.error("An unexpected error occurred:", error);
       }
-    }
   };
 
   if (!isClient) return { handleFormLogin, setFormData, formData };

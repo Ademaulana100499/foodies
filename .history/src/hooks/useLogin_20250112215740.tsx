@@ -3,7 +3,6 @@ import { handleLogin } from "@/services/auth";
 import { setCookie } from "cookies-next";
 import { useRouter } from "next/router";
 import Swal from "sweetalert2";
-import { AxiosError } from "axios";
 const useLogin = () => {
   const [isClient, setIsClient] = useState(false);
   const router = useRouter();
@@ -27,18 +26,14 @@ const useLogin = () => {
         confirmButtonColor: "#F97316",
       });
       router.push("/");
-    } catch (error: unknown) {
-      if (error instanceof AxiosError) {
-        console.error(error.response?.data?.message);
-        Swal.fire({
-          title: "Email or Password is incorrect!",
-          icon: "error",
-          draggable: true,
-          confirmButtonColor: "#F97316",
-        });
-      } else {
-        console.error("An unexpected error occurred:", error);
-      }
+    } catch (error: any) {
+      console.error(error.response.data.message);
+      Swal.fire({
+        title: "Email or Password is incorrect!",
+        icon: "error",
+        draggable: true,
+        confirmButtonColor: "#F97316",
+      });
     }
   };
 
